@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncapp/components/constants.dart';
 import 'package:syncapp/components/roundButton.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -23,9 +24,9 @@ class _LoginScreenState extends State<LoginScreen> {
         children: <Widget>[
           Container(
             child: Image.asset('images/login_logo.png'),
-            height: 207.0,width: 170.0,
+            height: ScreenUtil().setHeight(207.0),width: ScreenUtil().setWidth(170.0),
           ),
-          SizedBox(height: 30.0,),
+          SizedBox(height: ScreenUtil().setHeight(30),),
           Padding(
             padding: const EdgeInsets.only(left: 44.0,right: 35.0),
             child: TextField(
@@ -34,10 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (value) {
                 email = value;
               },
-              decoration: kTextFieldDecoration.copyWith(hintText: 'Email Address',hintStyle: TextStyle(fontFamily: 'Quicksand',fontSize: 16.0,fontWeight: FontWeight.w300)),
+              decoration: kTextFieldDecoration.copyWith(hintText: 'Email Address',hintStyle: TextStyle(fontFamily: 'Quicksand',fontSize:ScreenUtil().setSp(16,allowFontScalingSelf: true),fontWeight: FontWeight.w300)),
             ),
           ),
-          SizedBox(height: 10.0,),
+          SizedBox(height: ScreenUtil().setHeight(10),),
           Padding(
             padding: const EdgeInsets.only(left: 44.0,right: 35.0),
             child: TextField(
@@ -47,15 +48,15 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (value) {
                 password = value;
               },
-              decoration: kTextFieldDecoration.copyWith(hintText: 'Password',hintStyle: TextStyle(fontFamily: 'Quicksand',fontSize: 16.0,fontWeight: FontWeight.w300)),
+              decoration: kTextFieldDecoration.copyWith(hintText: 'Password',hintStyle: TextStyle(fontFamily: 'Quicksand',fontSize:ScreenUtil().setSp(16,allowFontScalingSelf: true),fontWeight: FontWeight.w300)),
             ),
           ),
           RaisedGradientButton(
-            width: 296.0,
+            width: ScreenUtil().setWidth(296),
               child: Text(
                 'Login',
                   style: TextStyle(fontFamily: 'Quicksand',
-                      color: Colors.white,fontSize: 16.0,
+                      color: Colors.white,fontSize: ScreenUtil().setSp(16,allowFontScalingSelf: true),
                       fontWeight: FontWeight.w400
                   ),
               ),
@@ -68,10 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
 //
           FlatButton( onPressed: (){},
-              child: Text('Forgot password?',textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Quicksand',fontSize: 14.0,fontWeight: FontWeight.w500,color: Color(0xFF393E41 )))),
-          SizedBox(height: 50.0,),
+              child: Text('Forgot password?',textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Quicksand',fontSize:ScreenUtil().setSp(14,allowFontScalingSelf: true),fontWeight: FontWeight.w500,color: Color(0xFF393E41 )))),
+          SizedBox(height: ScreenUtil().setHeight(50),),
           FlatButton( onPressed: (){},
-              child: Text('Create an new account',textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Quicksand',fontSize: 16.0,fontWeight: FontWeight.w700,color: Color(0xFF393E41 ))))
+              child: Text('Create an new account',textAlign: TextAlign.center,style: TextStyle(fontFamily: 'Quicksand',fontSize:ScreenUtil().setSp(16,allowFontScalingSelf: true),fontWeight: FontWeight.w700,color: Color(0xFF393E41 ))))
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:syncapp/pages/LoginScreen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -12,6 +13,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,width: 375.0,height: 812.0,allowFontScaling: true);
     return Scaffold(
         body: Container(
           decoration: BoxDecoration(
@@ -33,18 +35,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       children: <Widget>[
                         Container(
                           child: Image.asset('images/logo.png'),
-                          height: 100.0,
+                          height: ScreenUtil().setHeight(100),
                         ),
                         Container(
                           child: Image.asset('images/logo_label.png'),
-                          height: 80.0,
+                          height: ScreenUtil().setWidth(80),
                         ),
                         Container(
                           child: Text(
                             'the meeting app',
                             textAlign: TextAlign.center,
                             style: TextStyle( fontFamily: 'Quicksand'
-                            ,fontSize: 20.0, fontStyle: FontStyle.normal,fontWeight: FontWeight.w300, color: Colors.white.withOpacity(0.6))
+                            ,fontSize: ScreenUtil().setSp(20,allowFontScalingSelf: true), fontStyle: FontStyle.normal,fontWeight: FontWeight.w300, color: Colors.white.withOpacity(0.6))
                           ),
                         ),
 
@@ -66,12 +68,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           onPressed: () {
                             Navigator.pushNamed(context, LoginScreen.id);
                           },
-                          minWidth: 296.0,
-                          height: 56.0,
+                          minWidth: ScreenUtil().setWidth(296),
+                          height: ScreenUtil().setHeight(56),
                           child: Text(
                             'Get Started',
                             style: TextStyle(fontFamily: 'Quicksand',
-                                color: Color(0xFF393E41 ),fontSize: 20.0,
+                                color: Color(0xFF393E41 ),fontSize: ScreenUtil().setSp(20,allowFontScalingSelf: true),
                               fontWeight: FontWeight.w600
                             ),
                           ),

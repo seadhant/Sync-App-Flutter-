@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncapp/pages/LoginScreen.dart';
 import 'package:syncapp/pages/RegistrationScreen.dart';
 import 'package:syncapp/pages/WelcomeScreen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() => runApp(SyncApp());
 
